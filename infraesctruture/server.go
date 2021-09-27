@@ -12,6 +12,7 @@ import (
 
 func Service() {
 
+    r := mux.NewRoute()
 
 	srv := &http.Server{
 		Addr: "0.0.0.0:8000",
@@ -21,6 +22,6 @@ func Service() {
 		IdleTimeout:  time.Second * 60,
 		Handler:      r, // Pass our instance of gorilla/mux in.
 	}
-	fmt.Println("server-pipeline running on http://0.0.0.0:8000 ")
+	fmt.Println("server running on http://0.0.0.0:8000 ")
 	
 }
